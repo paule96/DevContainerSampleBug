@@ -40,8 +40,10 @@ docker run ubuntu /bin/bash -c "cat /etc/resolv.conf"
 now you should see things like that:
 
 ```bash
-# DNS requests are forwarded to the host. DHCP DNS options are ignored.
+options ndots:0
+
 nameserver 8.8.8.8
+nameserver 8.8.4.4
 ```
 
 And this will be an issue if you company network blocks DNS requests to the internet. Then all your docker in docker containers are basically offline
